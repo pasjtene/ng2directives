@@ -11,11 +11,13 @@ import { SensorConfigModule } from './sensor-config/sensor-config.module';
 import { SensorListComponent } from './sensor-list/sensor-list.component';
 import { SensorFilterComponent } from './sensor-filter/sensor-filter.component';
 import { ConfigModalComponent } from './config-modal/config-modal.component';
+import { OpenModalDirective } from './open-modal.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloAngular2,
+    OpenModalDirective,
     //ConfigModalComponent,
     //SensorFilterComponent,
     //SensorListComponent,
