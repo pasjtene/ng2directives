@@ -1,0 +1,29 @@
+.shead {
+  display: inline-block;
+  border: 1px solid gray;
+  padding: 10px;
+  width: 200px;
+}
+.scontent {
+  border: 1px solid gray;
+  padding: 10px;
+  width: 200px;
+}
+
+.jt-table-default {
+  border-collapse: collapse;
+}
+
+tr {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.jt-table-default tr, td {
+  padding: 20px;
+  border-color: gray;
+}
+
+.jt-table-default tr:hover, .jt-table-default td:hover{
+  background-color: lightgray;
+}

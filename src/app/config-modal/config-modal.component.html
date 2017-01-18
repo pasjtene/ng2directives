@@ -1,0 +1,20 @@
+
+<div #dialog class="jt-md-dialog" [hidden]="!isOpen" (keydown.esc)="cancel()" (keydown.enter)="ok(sensorModel)" >
+  <div class="md-dialog-content" >
+    <div class="jt-modal-title">
+      <ng-content select="[title]"></ng-content>
+    </div>
+    <div class="jt-modal-content" >
+      <ng-content select="[content]"></ng-content>
+    </div>
+  </div>
+  <div class="jt-button-div">
+    <button class="jt-button-green" (click)="ok(sensorModel)">ok</button>
+  </div>
+    <div class="jt-button-div">
+      <button class="jt-button-red" (click)="cancel()">Cancel</button>
+    </div>
+    <!--Needed for keyboard bindings to work -->
+    <div tabindex="0" (focus)="dialog.focus()"></div>
+</div>
+<div class="jt-backdrop" *ngIf="isOpen"> </div>

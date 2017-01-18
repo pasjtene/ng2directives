@@ -1,0 +1,18 @@
+
+
+  <table class="jt-table-default">
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>type</th>
+      <th></th>
+  </thead>
+  <tr *ngFor="let s of sensorsj">
+    <td>{{s.name}}</td>
+    <td> {{s.description}} </td>
+    <td>{{s.type}}</td>
+    <td>
+      <button class="jt-button-blue" (click)=add(s)>Add</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,68 @@
+<div class="sensors-div">
+<h4>
+  List of sensors
+</h4>
+
+<div class="jt-button-div">
+  <button class="jt-button-blue" (click)="refreshSensors()">
+    Scan for sensors
+  </button>
+</div>
+
+<table class="mdl-data-table mdl-js-data-table" *ngIf="sensors && sensors.length > 0">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">name</th>
+      <th class="mdl-data-table__cell--non-numeric">description</th>
+      <th><th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of sensors">
+      <td class="mdl-data-table__cell--non-numeric">{{item.name}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{item.description}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="mdl-data-table mdl-js-data-table" *ngIf="dashboardSensors && dashboardSensors.length > 0">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">name</th>
+      <th class="mdl-data-table__cell--non-numeric">description</th>
+      <th><th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dashboardSensors">
+      <td class="mdl-data-table__cell--non-numeric">{{item.name}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{item.description}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="sensors-div">
+  <sensor-filter #filterCmp></sensor-filter>
+</div>
+
+<div class="sensors-div">
+<h4>
+  List of sensors
+</h4>
+<sensor-list *ngIf="sensors && sensors.length > 0" [sensorsj]="sensors | filterSensor:filterCmp.selectedCategory" (onAddItem)="selectSensor($event, modalConfig)"></sensor-list>
+</div>
+
+<config-modal #modalConfig (onConfirm)="addToDashboard(sensorModel)">
+  <span title><h3>Add new Sensor? </h3></span>
+  <span content>
+    <h4>
+      <form #sensorForm="ngForm" *ngIf="sensorModel">
+        Name:
+        <input [(ngModel)]="sensorModel.name" name="name"/> <br/>
+        Description: {{sensorModel.description}} <br/>
+        Type: {{sensorModel.type}}
+      </form>
+    </h4>
+  </span>
+</config-modal>

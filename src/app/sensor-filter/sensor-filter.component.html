@@ -1,0 +1,13 @@
+<p>
+  Select a Sensor
+</p>
+
+<div class="jt-conten-div">
+  <input type="radio" name="options" value="" (change)="categoryChanged(undefined)"/>
+  <span class="mdl-radio__label">All</span>
+
+  <label *ngFor="let category of categories">
+    <input type="radio" name="options" value="{{category}}" (change)="categoryChanged(category)"/>
+    <span class="mdl-radio__label">{{category}}</span>
+  </label>
+</div>
