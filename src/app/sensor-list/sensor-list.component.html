@@ -6,13 +6,42 @@
       <th>Description</th>
       <th>type</th>
       <th></th>
+      <th></th>
   </thead>
   <tr *ngFor="let s of sensorsj">
     <td>{{s.name}}</td>
     <td> {{s.description}} </td>
     <td>{{s.type}}</td>
-    <td>
-      <button class="jt-button-blue" (click)=add(s)>Add</button>
+    <td >
+      <div ></div>
+      <button class="jt-button-blue" [open-modal]="modalConfig" (onConfirm)="add(s)" (click)="sensorModel = s">Add</button>
+    </td>
+    <td >
+      <div ></div>
+      <button class="jt-button-blue" [open-modal]="modalConfig2" (onConfirm)="add(s)" (click)="sensorModel = s">Add more</button>
     </td>
   </tr>
 </table>
+
+<config-modal #modalConfig>
+  <span title><h3>Add new Sensor? </h3></span>
+  <span content>
+    <h4>
+      <form #sensorForm="ngForm" *ngIf="sensorModel">
+        Name:
+        <input [(ngModel)]="sensorModel.name" name="name"/> <br/>
+        Description: {{sensorModel.description}} <br/>
+        Type: {{sensorModel.type}}
+      </form>
+    </h4>
+  </span>
+</config-modal>
+
+<config-modal #modalConfig2>
+  <span title><h3>really Add new Sensor? </h3></span>
+  <span content>
+    <h4>
+      ok doing that now
+    </h4>
+  </span>
+</config-modal>

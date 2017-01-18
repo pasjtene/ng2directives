@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Sensor, SensorService } from '../core/sensors.service';
+import { OpenModalDirective } from '../config-modal/open-modal.directive';
 
 @Component({
   selector: 'sensor-list',

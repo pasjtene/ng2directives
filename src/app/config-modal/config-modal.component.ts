@@ -5,26 +5,27 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   templateUrl: './config-modal.component.html',
   styleUrls: ['./config-modal.component.css']
 })
+
 export class ConfigModalComponent implements OnInit {
   private isOpen: boolean = false;
+  private nextFn: Function;
 
-  @Output() onConfirm: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  open() {
+  open(callback: Function) {
+    this.nextFn = callback;
     this.isOpen = true;
   }
 
-  ok() {
+  ok(callback) {
+    this.nextFn();
     this.isOpen = false;
-    this.onConfirm.emit(null);
   }
 
   cancel() {
     this.isOpen = false;
   }
-
 }

@@ -8,6 +8,7 @@ import { SensorListComponent } from '../sensor-list/sensor-list.component';
 import { SensorFilterComponent } from '../sensor-filter/sensor-filter.component';
 import { ConfigModalComponent } from '../config-modal/config-modal.component';
 import { FormsModule } from '@angular/forms';
+import { OpenModalDirective } from '../config-modal/open-modal.directive';
 
 @NgModule ({
   imports: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     FilterSensor,
     SensorListComponent,
     SensorFilterComponent,
-    ConfigModalComponent    
+    ConfigModalComponent,
+    OpenModalDirective
   ],
 
   providers: [SensorService]

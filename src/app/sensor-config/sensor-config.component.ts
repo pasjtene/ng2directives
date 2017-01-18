@@ -37,7 +37,8 @@ export class SensorConfigComponent implements OnInit {
 
   selectSensor(sensor:Sensor, modal:ConfigModalComponent ) {
     this.sensorModel = sensor;
-    modal.open();
+    //modal.open();
+    this.dashboardSensors.push(sensor);
   }
 
 }
