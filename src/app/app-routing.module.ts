@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SensorConfigComponent } from './sensor-config/sensor-config.component';
 import { HelloAngular2 } from './hello-angular2/hello-angular2.component'
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -10,10 +11,13 @@ const routes: Routes = [
     component:AppComponent
 
   },
-
   {
     path: 'hello',
     component:HelloAngular2
+  },
+  {
+    path: 'home',
+    component:HomeComponent
   }
 ]
 
