@@ -9,6 +9,7 @@ export class OpenModalDirective {
 
   @HostListener('click')
   clicked() {
+    console.log(this);
     this.modalInstance.open(this.emitConfirm.bind(this));
   }
 

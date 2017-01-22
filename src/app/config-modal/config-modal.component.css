@@ -1,12 +1,40 @@
-.jt-md-dialog {
-  position:fixed;
-  top: 150px;
-  left: 40%;
-  margin: 0 auto;
+.jt-md-dialog-container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;  
   z-index: 51;
-  box-shadow: 6px 6px 2px rgba(158,158,158,0.7);
-  border: 1px solid gray;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  position: fixed;
+}
+
+/* the jt-md-dialog is a flex item within the jt-md-dialog-container
+This help achieve perfect centering and othe flex box advantages
+ */
+.jt-md-dialog {
+  /*position:fixed;*/
+/*  top: 150px;
+  left: 40%; */
+  margin: auto;
+  z-index: 51;
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  border: 2px solid orange;
   background-color: white;
+  width: 600px;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+/*an empty invisible flex item to push the dialog box up.
+ May be removed if perfect centering is desired
+ */
+.jt-md-dialog-not-visible {
+  margin: auto;
+  z-index: 51;
+  border: none;
+  background:none;
   width: 600px;
 }
 
@@ -18,7 +46,7 @@
   right: 0;
   position: fixed;
   z-index: 50;
-  opacity: .55;  
+  opacity: .55;
 }
 
 .jt-button-div {

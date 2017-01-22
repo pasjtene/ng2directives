@@ -4,12 +4,12 @@ import { SensorConfigComponent } from './sensor-config/sensor-config.component';
 import { HelloAngular2 } from './hello-angular2/hello-angular2.component'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { HumiditySensorComponent } from './d3/humidity.component';
 
 const routes: Routes = [
   {
     path: '',
     component:AppComponent
-
   },
   {
     path: 'hello',
@@ -18,6 +18,11 @@ const routes: Routes = [
   {
     path: 'home',
     component:HomeComponent
+  }
+  ,
+  {
+    path: 'chart',
+    component:HumiditySensorComponent
   }
 ]
 

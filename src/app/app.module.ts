@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { WidgetComponent } from './widget/widget.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TabComponent } from './tab/tab.component';
+import { HumiditySensorComponent } from './d3/humidity.component';
+import { DonutChartDirective } from './d3/donut-chart.directive';
+import { D3Service } from 'd3-ng2-service';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { TabComponent } from './tab/tab.component';
     HomeComponent,
     WidgetComponent,
     TabsComponent,
-    TabComponent
+    TabComponent,
+    HumiditySensorComponent,
+    DonutChartDirective
 
     //ConfigModalComponent,
     //SensorFilterComponent,
@@ -38,7 +43,7 @@ import { TabComponent } from './tab/tab.component';
     AppRoutingModule,
     SensorConfigModule
   ],
-  providers: [],
+  providers: [D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

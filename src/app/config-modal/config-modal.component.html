@@ -1,4 +1,5 @@
 
+<div class="jt-md-dialog-container" *ngIf="isOpen">
 <div #dialog class="jt-md-dialog" [hidden]="!isOpen" (keydown.esc)="cancel()" (keydown.enter)="ok(sensorModel)" >
   <div class="md-dialog-content" >
     <div class="jt-modal-title">
@@ -17,4 +18,8 @@
     <!--Needed for keyboard bindings to work -->
     <div tabindex="0" (focus)="dialog.focus()"></div>
 </div>
-<div class="jt-backdrop" *ngIf="isOpen"> </div>
+<!-- an empty invisible flex item to push the dialog box up. May be removed if perfect centering is desired-->
+<div class="jt-md-dialog-not-visible"></div>
+
+</div>
+ <div class="jt-backdrop" *ngIf="isOpen"></div>

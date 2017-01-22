@@ -15,6 +15,11 @@ export class SensorListComponent implements OnInit {
   ngOnInit() {
   }
 
+/**
+*Emit the sensor which is seleced in the template.
+*The onAddItem event is cauth in sensor-config.component.html, with the sensor-list element
+*When the event is caught, it called a function to add the new item in the list
+*/
   add(sensor: Sensor) {
     this.onAddItem.emit(sensor);
   }

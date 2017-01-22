@@ -11,6 +11,7 @@ export class TabsComponent implements OnInit, AfterContentInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("List of tabs: init.. ", this.tabs);
   }
 
   /**
@@ -21,7 +22,7 @@ export class TabsComponent implements OnInit, AfterContentInit {
   ngAfterContentInit() {
     let activeTabs = this.tabs.filter((tab) => tab.isActive);
     if (activeTabs.length === 0) {
-      this.selectTab(this.tabs.first);
+      this.selectTab(this.tabs.last);
     }
   }
 

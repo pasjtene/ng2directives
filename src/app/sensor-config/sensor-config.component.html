@@ -50,5 +50,6 @@
 <h4>
   List of sensors
 </h4>
+<!--filtered censor list -->
 <sensor-list *ngIf="sensors && sensors.length > 0" [sensorsj]="sensors | filterSensor:filterCmp.selectedCategory" (onAddItem)="selectSensor($event, modalConfig)"></sensor-list>
 </div>
